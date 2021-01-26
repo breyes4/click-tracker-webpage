@@ -7,4 +7,6 @@ function clickListener(e) {
     }
     arrayWithElements.push($(clickedElement).cssSelectorAsString()); // <====
     alert(arrayWithElements);
+    
+    console.log("You clicked" + arrayWithElements + "times");
 }    
