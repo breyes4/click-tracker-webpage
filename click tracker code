@@ -1,20 +1,10 @@
-var arrayWithElements = new Array();
-
-function clickListener(e) 
-{   
-    var clickedElement=(window.event)
-                        ? window.event.srcElement
-                        : e.target,
-        tags=document.getElementsByTagName(clickedElement.tagName);
-
-    for(var i=0;i<tags.length;++i)
-    {
-      if(tags[i]==clickedElement)
-      {
-        arrayWithElements.push({tag:clickedElement.tagName,index:i}); 
-        console.log(arrayWithElements);
-      }    
+function clickListener(e) {
+    var clickedElement;
+    if(e == null) {
+        clickedElement = event.srcElement;
+    } else {
+        clickedElement = e.target;
     }
-}
-
-document.onclick = clickListener;
+    arrayWithElements.push($(clickedElement).cssSelectorAsString()); // <====
+    alert(arrayWithElements);
+}    
